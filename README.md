@@ -1,24 +1,13 @@
-# README
+The name of the service is 'my portfolio'.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the platform of portfolios.
 
-Things you may want to cover:
+You can upload your one, and would get comment or likes by the other users!
 
-* Ruby version
+Portfolio can be web-sites, music, photograph, video, and the other artworks.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby 2.5.1
+Rails 5.1.6
+TwitterAPI
