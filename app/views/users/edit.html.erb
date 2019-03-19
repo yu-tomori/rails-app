@@ -1,0 +1,9 @@
+<h1>This is EDIT user page.</h1>
+<%= form_for @user, url: user_path(@user), html: {method: "patch"} do |f| %>
+
+ <%=  %>
+
+ <%= f.label "背景画像" %>
+ <%= f.file_field :picture %>
+
+<% end %>

@@ -1,0 +1,25 @@
+<% if !!session[:user_id] %>
+
+ <div class="header-right-content">
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to 'マイページ', @user %></li>
+    <li><a href="#">メニュー2</a></li>
+    <li><a href="#">メニュー3</a></li>
+    <li><a href="#">メニュー4</a></li>
+  </ul>
+  </div>
+  <%= link_to "作品を投稿する", root_path, :class => "twitter-login-button", :style => "margin-left: 5px;" %>
+  <%= image_tag(@user.image, :class => 'header-icon') %>
+ </div>
+
+<% else %>
+
+ <div class="header-right-content">
+   <%= link_to "Twitterで登録/ログイン", user_twitter_omniauth_authorize_path, :class => "twitter-login-button" %>
+ </div>
+
+<% end %>
