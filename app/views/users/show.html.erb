@@ -1,2 +1,17 @@
-<h1>This is profile page</h1>
-<%= link_to 'プロフィールの編集', edit_user_path(@user) %>
+<div class="show-wrapper">
+ <div class="show-back-wrapper">
+ 
+  <%= image_tag(@user.picture, :class => "background-image") if @user.picture.present? %>
+ 
+  <div class="show-info-wrapper">
+   <div class="icon-and-name">
+    <%= image_tag(@user.image, :size => 80, :class => "show-header-icon") %>
+    <p class="show-name"><%= @user.name + " /" + @user.type %></p>
+   </div>
+   <div class="show-description"><%= @user.description %></div>
+  </div>
+ 
+  <%= link_to 'プロフィールの編集', edit_user_path(@user), :class => "edit-profile" %>
+
+ </div>
+</div> 

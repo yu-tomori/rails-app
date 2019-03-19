@@ -10,6 +10,7 @@ end
 ruby '2.5.1'
 gem 'rails', '~> 5.1.6'
 
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'

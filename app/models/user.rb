@@ -1,5 +1,6 @@
 class User < ApplicationRecord
  mount_uploader :picture, PictureUploader
+ self.inheritance_column = :_type_disabled
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
