@@ -1,2 +1,34 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="slide-articles"></div>
+<div class-"search"></div>
+
+<div>
+ <p class="home-text">ユーザ</p>
+ <div class="home-flex">
+  <% @home_users.each do |user| %>
+   <a class="home-user" href="<%= user_url(user.id) %>" style="background-image: url('<%= user.picture.home.url %>');">
+     <% if user.image %>
+      <%= image_tag(user.image, :size => 70, :class => "card-icon") %>
+     <% else %>
+      <%= image_tag(user.seedicon, :size => 70, :class => "card-icon") %>
+     <% end %>
+    <div class="text">
+     <p class="card-user-name"><%= user.name %></p>
+     <p class="card-user-type"><%= user.type if user.type.present? %></p>
+    </div>
+   </a>
+  <% end %>
+ </div>
+</div>
+
+<div>
+ <p class="home-text">作品</p>
+ <div class="home-flex">
+  <% @home_articles.each do |article| %>
+   <a href="<%= article_url(article.id) %>" class="home-article">
+    <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
+    <p class="home-article-name"><%= article.name %></p>
+    <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
+   </a>  
+  <% end %>
+ </div>
+</div>

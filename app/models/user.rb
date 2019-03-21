@@ -1,6 +1,9 @@
 class User < ApplicationRecord
  mount_uploader :picture, PictureUploader
+ mount_uploader :seedicon, IconUploader
  self.inheritance_column = :_type_disabled
+ has_many :articles, dependent: :destroy
+ validates :name, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -21,7 +24,7 @@ class User < ApplicationRecord
         name: auth.info.name, 
         nickname: auth.info.nickname,
         description: auth.info.description,
-        picture: auth.extra.raw_info.profile_background_image_url
+        picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
       )
     end
 

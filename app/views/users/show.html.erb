@@ -1,17 +1,43 @@
 <div class="show-wrapper">
  <div class="show-back-wrapper">
- 
-  <%= image_tag(@user.picture, :class => "background-image") if @user.picture.present? %>
+
+  <% if @user.picture.present? %> 
+   <%= image_tag(@user.picture, :class => "background-image") %>
+  <% else %>
+   <div class="background-image" style="background-color: #808080;"></div>
+  <% end %> 
  
   <div class="show-info-wrapper">
    <div class="icon-and-name">
-    <%= image_tag(@user.image, :size => 80, :class => "show-header-icon") %>
-    <p class="show-name"><%= @user.name + " /" + @user.type %></p>
+
+    <% if @user.image %>
+     <%= image_tag(@user.image, :size => 80, :class => "show-header-icon") %>
+    <% else %>
+     <%= image_tag(@user.seedicon, :size => 80, :class => "show-header-icon") %>
+    <% end %>
+
+    <div class="show-name">
+     <p><%= @user.name %></p>
+     <p class="show-type"><%= @user.type if @user.type.present? %></p>
+    </div>
    </div>
    <div class="show-description"><%= @user.description %></div>
   </div>
  
-  <%= link_to 'プロフィールの編集', edit_user_path(@user), :class => "edit-profile" %>
+  <% if @user == @login_user %>
+   <%= link_to 'プロフィールの編集', edit_user_path(@login_user), :class => "edit-profile" %>
+  <% end %>
 
+ </div>
+
+ <div class="show-user-article">
+  <div class="home-flex">
+   <% @users_articles.each do |article| %>
+    <a href="<%= article_url(article.id) %>" class="home-article">
+     <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
+    <p class="home-article-name"><%= article.name %></p>
+    <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
+    </a>
+   <% end %> 
  </div>
 </div> 

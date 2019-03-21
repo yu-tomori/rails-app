@@ -1,0 +1,21 @@
+<div class="article-show">
+<p class="article-name"><%= @article.name %></p>
+<p class="article-catchcopy"><%= '〜' + @article.catchcopy + '〜' %></p>
+<p class="user-name">creater: <%= link_to(@article.user.name, @creator) %></p>
+
+<div style="display: inline-block; margin-bottom: 10px;">
+<% if @login_user.present? && @login_user.id == @article.user.id %>
+ <%= link_to "作品を編集する", edit_article_path(@article), :class => "edit-article-btn" %>
+ <%= link_to "作品を削除する", article_path(@article), method: :delete, :class => "edit-article-btn" %>
+<% end %>
+</div>
+
+<%= image_tag(@article.image, :class=>"article-image") if @article.image.present? %>
+
+<% if @article.url.present? %>
+ <%= link_to "作品を見にいく", @article.url, :class =>"article-url-btn", target: :_blank%>
+<% end %>
+
+<p class="about-article">About</p>
+<%= @article.description %>
+</div>

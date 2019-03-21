@@ -10,6 +10,8 @@ end
 ruby '2.5.1'
 gem 'rails', '~> 5.1.6'
 
+gem 'toastr-rails'
+gem 'rails-i18n'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'jquery-ui-rails'

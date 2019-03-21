@@ -1,0 +1,5 @@
+ja:
+  devise:
+    omniauth_callbacks:
+      failure: "\"%{reason}\".%{kind}からログイン/登録を認証することができません."
+      success: "%{kind}アカウントから認証できました."

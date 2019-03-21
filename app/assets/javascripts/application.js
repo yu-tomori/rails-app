@@ -16,3 +16,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require toastr
+
+$(function(){
+  $.notify($('#flash-message')); 
+});

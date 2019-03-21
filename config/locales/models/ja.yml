@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      article: 作品
+    attributes:
+      user:
+        name: ユーザ名
+        type: 職業
+        description: 自己紹介
+        picture: 背景画像
+      article:
+        name: 作品名
+        url: 作品のurl
+        description: 作品の説明
+        catchcopy: キャッチコピー
+        image: イメージ画像

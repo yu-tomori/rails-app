@@ -1,0 +1,45 @@
+<div class="new-article">
+ 
+ <% if @article.errors.any? %>
+  <script type="text/javascript">
+   <% @article.errors.full_messages.each do |msg| %>
+    toastr.error('<%= msg %>');
+   <% end %>
+  </script>
+ <% end %>
+  
+ 
+ <%= form_for(@article) do |f| %>
+
+  <%= f.hidden_field :user_id, :value => @login_user.id  %>
+
+  <div class="form-group">
+   <%= f.label "作品名" %>
+   <%= f.text_field :name, :maxlength => 30, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+   <%= f.label "作品のURL" %>
+   <%= f.text_field :url, :maxlength => 255, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+   <%= f.label "作品の説明" %>
+   <%= f.text_area :description, :maxlength => 255, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+   <%= f.label "作品のキャッチコピー(30文字以内)" %>
+   <%= f.text_field :catchcopy, :maxlength => 30, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+   <%= f.label "作品のイメージ画像"%>
+   <%= f.file_field :image %>
+   <p>*必須ではありません. jpg, jpeg, gif, pngがアップロード可能です.</p>
+  </div>
+
+  <button type="submit" class="btn btn-success">作品を投稿する</button>
+
+<% end %>
+</div>

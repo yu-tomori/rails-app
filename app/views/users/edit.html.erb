@@ -1,5 +1,15 @@
 <div class="edit">
-<%= form_for @user, url: user_path(@user), html: {method: "patch"} do |f| %>
+
+ <% if @login_user.errors.any? %>
+  <script type="text/javascript">
+   <% @login_user.errors.full_messages.each do |msg| %>
+    toastr.error('<%= msg %>');
+   <% end %>
+  </script>
+ <% end %>
+
+
+<%= form_for @login_user, url: user_path(@login_user), html: {method: "patch"} do |f| %>
 
  <div class="form-group">
   <%= f.label "お名前"  %>
@@ -20,7 +30,7 @@
  <div class="form-group">
   <%= f.label "職業" %>
   <%= f.text_field :type, :maxlength => 15, :class => "form-control" %>
-  <p>※必須ではありません.</p>
+  <p>※必須ではありません. jpg, jpeg, gif, pngがアップロード可能です.</p>
  </div>
 
  <button type="submit" class="btn btn-primary">変更</button>
