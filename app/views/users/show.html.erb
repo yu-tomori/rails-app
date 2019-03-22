@@ -24,20 +24,57 @@
    <div class="show-description"><%= @user.description %></div>
   </div>
  
-  <% if @user == @login_user %>
-   <%= link_to 'プロフィールの編集', edit_user_path(@login_user), :class => "edit-profile" %>
+  <% if @login_user.present? && @user == @login_user %>
+   <%= link_to 'プロフィールの編集', edit_user_path(@login_user), :class => "edit-profile", :style => "color: white;" %>
+  <% elsif @login_user.present? %>
+   <%= render 'follow_form' %>
+  <% else %>
+
   <% end %>
 
  </div>
 
+ <div class="user-show-info">
+  <div id="follow" class="info"><%= @user.following.count.to_s + ' Follow' %></div>
+  <div id="followers" class="info"><%= @user.followers.count.to_s + ' Followers' %></div>
+  <div class="info"><%= @user.articles.count.to_s + ' Artworks' %></div>
+  <div class="info"><%= @user.likes.to_s + ' Likes' %></div>
+ </div>
+
+ <% if @user.following.present? %>
+ <p class="follow-text"><%= @user.name %>がフォローしているユーザ:</p>
+ <div class="user-show-follow-info">
+    <% @user.following.each do |following| %>
+     <% icon = following.seedicon.present? ? following.seedicon : following.image %>
+     <%= link_to image_tag(icon, :size => 60, :class => "follow-icon"), user_path(following) %>
+    <% end %>
+ </div>
+ <% end %>
+
+ <% if @user.followers.present? %>
+ <p class="follow-text"><%= @user.name %>をフォローしているユーザ:</p>
+ <div class="user-show-follow-info">
+    <% @user.followers.each do |follower| %>
+     <% icon2 = follower.seedicon.present? ? follower.seedicon : follower.image %>
+     <%= link_to image_tag(icon2, :size => 60, :class => "follow-icon"), user_path(follower)  %>
+    <% end %>
+ </div>
+ <% end %>
+
+ <p class="follow-text" style="font-family: Futura;font-size: 25px;">Artworks</p>
  <div class="show-user-article">
   <div class="home-flex">
    <% @users_articles.each do |article| %>
-    <a href="<%= article_url(article.id) %>" class="home-article">
+    <div class="home-article">
+    <a href="<%= article_url(article.id) %>">
      <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
     <p class="home-article-name"><%= article.name %></p>
     <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
     </a>
+    <div id="<%= article.id %>">
+    <%= render "likes/like", article: article %>
+    </div>
+    </div>
    <% end %> 
  </div>
 </div> 

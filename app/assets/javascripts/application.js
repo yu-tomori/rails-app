@@ -21,3 +21,4 @@
 $(function(){
   $.notify($('#flash-message')); 
 });
+

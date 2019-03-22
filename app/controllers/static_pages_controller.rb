@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
    @home_users = User.all # 後で修正
    @home_users.each{ |user| user.picture.recreate_versions! }
 
-   @home_articles = Article.find([1, 2, 3, 4, 5, 6, 7, 63])
+   @home_articles = Article.find([1, 14, 25, 34, 46])
    @home_articles.each{ |article| article.image.recreate_versions! }
   end
 

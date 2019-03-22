@@ -6,10 +6,9 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to 'プロフィール', @login_user %></li>
     <li><%= link_to 'マイページ', @login_user %></li>
     <li><%= link_to 'ログアウト', destroy_user_session_path, { method: :delete } %></li>
-    <li><a href="#">メニュー3</a></li>
-    <li><a href="#">メニュー4</a></li>
   </ul>
   </div>
   <%= link_to "作品を投稿する", new_article_path, :class => "twitter-login-button", :style => "margin-left: 5px;" %>

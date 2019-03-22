@@ -58,7 +58,6 @@ header {
       .header-logo {
            display: flex;
            align-items: center;
-           margin-right: 8px;
       }
       
       .dropdown {
@@ -163,7 +162,7 @@ header {
    }
 
     .edit-profile {
-        color: #fff;
+        color: black;
         border: 2px solid #fff;
         font-size: 20px;
         border-radius: 20px; 
@@ -186,6 +185,48 @@ header {
     max-width: 1000px;
     margin: 50px auto;
     width: 75%;
+}
+
+.user-show-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    height: 65px;
+    background-color: #808080; 
+
+  .info {
+      color: #fff;
+      font-size: 15px;
+      margin: auto;
+  }
+}
+
+.follow-text {
+    font-size: 15px;
+    margin-left: 50px;
+    color: #808080;
+}
+
+.user-show-follow-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 50px;
+
+  .follow-icon{
+      border-radius: 48px;
+      border: solid 1px #808080;
+      margin-right: 5px;
+      margin-bottom: 10px;
+  }
+
+}
+
+.like {
+      position: relative;
+      top: -5px;
+      left: 5px;
 }
 
  // articles

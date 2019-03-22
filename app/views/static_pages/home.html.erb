@@ -14,6 +14,7 @@
     <div class="text">
      <p class="card-user-name"><%= user.name %></p>
      <p class="card-user-type"><%= user.type if user.type.present? %></p>
+     <p><%= "フォロー" + user.following.count.to_s + " フォロワー" + user.followers.count.to_s %>
     </div>
    </a>
   <% end %>
