@@ -1,0 +1,16 @@
+<p class="tag-text">作品につけるタグを青いボタンから選んでください</p>
+<%= link_to "完了", @article, :class=>"decide-tag" %>
+
+<% tagmaps.each do |tagmap| %>
+ <div class="tag-button2">
+ <%= form_for( tagmap, html: {id: tag.id, class: 'article-ontags'}, method: :delete, remote: true) do |f| %>
+  <div><%= hidden_field_tag :article_id, @article.id %></div>
+  <div><%= hidden_field_tag :tag_id, tagmap.tag.id %></div>
+  <%= button_tag(class: "tag-button") do %>
+   <%= content_tag :span, " #{Tag.find(tagmap.tag_id).content}", class: "glyphicon glyphicon-remove" %>
+  <% end %>
+ <% end %>
+ </div>
+<% end %>
+
+<hr />

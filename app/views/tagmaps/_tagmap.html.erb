@@ -1,0 +1,9 @@
+<span class="tag" style="display: inline-block;">
+ <%= form_for(@article.tagmaps.build, html: {id: @article.id}, remote: true) do |f| %>
+  <div><%= hidden_field_tag :article_id, @article.id %></div>
+  <div><%= hidden_field_tag :tag_id, tag.id %></div>
+  <%= button_tag(class: "blue-btn") do %>
+   <%= content_tag :span, "#{tag.content}" %>
+  <% end %>
+ <% end %>
+</span>

@@ -1,0 +1,8 @@
+<div class="ontags">
+ <%= render "tags/ontags", tagmaps: @article.tagmaps %>
+</div>
+<div class="tags">
+ <% @tag.each do |tag| %>
+  <%= render 'tagmaps/tagmap', tag: tag %>
+ <% end %>
+</div>

@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   @article = Article.new(article_params)
   if @article.save
    flash[:success] = "作品を投稿しました."
-   redirect_to @article 
+   redirect_to tag_article_path(@article) 
   else
    render 'new'
   end
@@ -40,6 +40,11 @@ class ArticlesController < ApplicationController
   Article.find(params[:id]).destroy
   flash[:success] = "作品のデータを消去しました"
   redirect_to @login_user
+ end
+
+ def tag
+  @tag = Tag.all
+  @article = Article.find(params[:id])
  end
 
   private

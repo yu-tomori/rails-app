@@ -14,8 +14,8 @@
     <div class="text">
      <p class="card-user-name"><%= user.name %></p>
      <p class="card-user-type"><%= user.type if user.type.present? %></p>
-     <p><%= "フォロー" + user.following.count.to_s + " フォロワー" + user.followers.count.to_s %>
     </div>
+    <p class="home-follow"><%= "フォロー" + user.following.count.to_s + "  フォロワー" + user.followers.count.to_s%></p>
    </a>
   <% end %>
  </div>
@@ -26,13 +26,13 @@
  <div class="home-flex">
   <% @home_articles.each do |article| %>
    <div class="home-article">
-   <a href="<%= article_url(article.id) %>">
+   <a href="<%= article_url(article.id) %>" style="text-decoration:none;">
     <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
     <p class="home-article-name"><%= article.name %></p>
     <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
    </a>
     <% if @login_user.present? %>
-     <div id="<%= article.id %>">
+     <div id="<%= article.id %>" style="position:absolute; bottom:5px; left: 5px;">
       <%= render "likes/like", article: article %>
      </div>
     <% end %>

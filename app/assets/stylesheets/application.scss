@@ -136,17 +136,19 @@ header {
         .show-header-icon {
             border-radius: 100px;
             border: 2px solid #fff;
-            display: inline;
+            display: inline-block;
         }
      
         .show-name {
             font-size: 35px;
-            display: inline;
-            margin-left: 30px;
+            display: inline-block;
+            margin-left: 20px;
+            position: relative;
+            top: 40px;
 
-        p {
-            display: inline;
-        }
+          p {
+              display: block;
+          }
 
           .show-type {
               font-size: 20px;
@@ -157,7 +159,7 @@ header {
       }
  
       .show-description {
-          font-size: 20px;
+          font-size: 15px;
           width: 75%;
           margin-top: 15px;
       }    
@@ -242,7 +244,7 @@ header {
    // show
 .article-show {
     margin: 50px auto;
-    width: 75%;
+    width: 100%;
     padding: 30px 30px;
     background-color: #fff;
 
@@ -250,8 +252,8 @@ header {
       font-size: 30px;
       font-family: Futura;
       color: #808080;
-      border: solid 3px #808080;
       text-align: center;
+      margin-top: 50px;
   }
 
   .article-catchcopy {
@@ -259,6 +261,15 @@ header {
       font-family: Futura;
       color: #808080;
       text-align: center;
+  }
+
+  .tag-button3 {
+      padding: 0.1em 1em;
+      border: solid 2px #808080;
+      color: #808080;
+      border-radius: 20px;
+      margin-right: 2px;
+      margin-bottom: 2px;      
   }
 
   .user-name {
@@ -315,6 +326,67 @@ header {
 
 }
 
+ // article-tag
+
+.tag-text {
+   font-size: 20px;
+   font-family: Futura;
+   color: #808080;
+   margin-top: 10px;
+   margin-left: 10px;
+   margin-bottom: 200px;
+}
+
+.decide-tag {
+   position: absolute;
+   top: 40px;
+   right: 20px;
+   font-size: 15px;
+   border: solid 2px black;
+   border-radius: 4px;
+   color: black;
+   text-decoration: none;
+   padding: 0.2em 0.5em;
+   &:hover {
+      color: #00bfff;
+      border: solid 2px #00bfff;
+      text-decoration: none;
+   }
+}
+
+.tag-button2 {
+   display: inline-block;
+}
+
+.tag-button {
+   font-size: 13px;
+   border: solid 2px black;
+   border-radius: 20px;
+   padding: 0.3em 0.5em;
+   margin-left: 3px;
+   margin-top: 2px;
+   color: black;
+   background-color: white;
+   &:hover {
+      color: white;
+      background-color: black;
+      border: solid 2px white;
+   }
+}
+
+.blue-btn {
+   font-size: 15px;
+   border: solid 1px #2e6da4;
+   border-radius: 20px;
+   padding: 0.3em 0.5em;
+   margin-left: 3px;
+   margin-top: 2px;
+   color: white;
+   background-color: #337ab7;
+   &:hover {
+      background-color: #2e6da4; 
+   }
+}
 
 
 // footer

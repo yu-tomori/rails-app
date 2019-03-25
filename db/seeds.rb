@@ -124,3 +124,10 @@ following = users[2..4]
 followers = users[3..5]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+tags = ['Ruby on Rails', 'Java', 'Webアプリ', 'Adobe Illustrator', 'Adobe Photoshop']
+tags.each do |tag|
+ Tag.create!(
+     content: tag
+ )
+end
