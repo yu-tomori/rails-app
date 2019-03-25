@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_action :get_login_user, only: [:show, :edit]
+ before_action :get_login_user, only: [:show, :edit, :update]
  before_action :get_user, only: [:show]
 
  def show
