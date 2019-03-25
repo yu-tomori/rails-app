@@ -25,11 +25,18 @@
  <p class="home-text">作品</p>
  <div class="home-flex">
   <% @home_articles.each do |article| %>
-   <a href="<%= article_url(article.id) %>" class="home-article">
+   <div class="home-article">
+   <a href="<%= article_url(article.id) %>">
     <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
     <p class="home-article-name"><%= article.name %></p>
     <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
-   </a>  
+   </a>
+    <% if @login_user.present? %>
+     <div id="<%= article.id %>">
+      <%= render "likes/like", article: article %>
+     </div>
+    <% end %>
+   </div>
   <% end %>
  </div>
 </div>

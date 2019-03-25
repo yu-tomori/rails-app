@@ -2,6 +2,11 @@
 <p class="article-name"><%= @article.name %></p>
 <p class="article-catchcopy"><%= '〜' + @article.catchcopy + '〜' %></p>
 <p class="user-name">creater: <%= link_to(@article.user.name, @creator) %></p>
+ <% if @login_user.present? %>
+  <div id="<%= @article.id %>">
+   <%= render "likes/like", article: @article %>
+  </div>
+ <% end %>
 
 <div style="display: inline-block; margin-bottom: 10px;">
 <% if @login_user.present? && @login_user.id == @article.user.id %>

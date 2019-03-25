@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     @article.like(@login_user)
     @article.reload
     respond_to do |format|
-     format.html {redirect_to user_path(@article.user)}
+     format.html {redirect_to :back}
      format.js
     end
    end
@@ -19,7 +19,7 @@ class LikesController < ApplicationController
     @article.unlike(@login_user)
     @article.reload
     respond_to do |format|
-     format.html {redirect_to user_path(@article.user)}
+     format.html {redirect_to :back}
      format.js
     end
    end

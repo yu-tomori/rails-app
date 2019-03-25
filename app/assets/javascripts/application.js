@@ -14,11 +14,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require turbolinks
 //= require_tree .
 //= require toastr
 
-$(function(){
-  $.notify($('#flash-message')); 
-});
-
+window.onpageshow = function(event) {
+  if (event.persisted) {
+       window.location.reload();
+  }
+};
