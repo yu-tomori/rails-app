@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
  def show
   @article = Article.find(params[:id])
   @creator = User.find(@article.user.id)
+  @comments = Comment.where(article_id: params[:id])
  end
 
  def new

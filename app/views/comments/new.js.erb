@@ -1,0 +1,2 @@
+$("#comment-modal").html("<%= escape_javascript(render 'comment_form', article_id: params[:article_id]) %>");
+$("#comment-modal").modal("show");

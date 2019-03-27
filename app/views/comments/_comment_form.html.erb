@@ -1,0 +1,15 @@
+<div class="modal-dialog" role="document">
+ <div class="modal-content">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px; margin-right: 10px;">
+   <span aria-hidden>&times;</span>
+  </button>
+  <p style="margin-left: 10px; margin-top: 10px;">  作品へのコメントを貰えるとクリエイターは嬉しいです</p>
+  <% comment = Comment.new %>
+　<%= form_for(comment) do |f| %>
+   <%= f.hidden_field :article_id, value: article_id %>
+   <%= f.hidden_field :user_id, value: session[:user_id] %>
+   <%= f.text_area :content, :class => "comment-area" %><br />
+   <%= f.submit 'コメントする', :class => "comment-submit"%>
+  <% end %>
+ </div>
+</div>

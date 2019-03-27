@@ -1,0 +1,13 @@
+<div style="margin-left: 10px;">
+ <p>Comments</p>
+ <% @comments.each do |comment| %>
+  <% commentUser = comment.user %>
+  <div style="display: inline-block;">
+   <%= image_tag(commentUser.image, :size => 30, :class => "comment-user-image") %>
+   <%= link_to commentUser.name, commentUser, :class => "comment-user-name"  %>
+  </div>
+  <p style="display: inline-block; position: relative; bottom: 25px;"><%= comment.content %></p><br />
+  <div class="border"></div>
+ <% end %>
+</div>
+

@@ -6,6 +6,7 @@ class Article < ApplicationRecord
  has_many :like_users, through: :likes, source: :user
  has_many :tagmaps, dependent: :destroy
  has_many :tags, through: :tagmaps, source: :tag
+ has_many :comments, dependent: :destroy
  validates :name, presence: true, length: { maximum: 30, too_long: "作品名は30文字以内でお願いします" }
  validates :url, presence: true, length: { maximum: 255, too_long: "申し訳ありませんが、256文字以上のURLは登録できません" }
  validates :description, presence: true, length: { maximum: 255, too_long: "申し訳ありませんが、256文字以上の説明は登録できません" }

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
 
+  get 'comments/new'
+
   get 'static_pages/home' 
   get 'static_pages/search'
   root 'static_pages#home'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
   resources :tagmaps, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
   get 'articles', to: 'articles#new'
   resources :articles do

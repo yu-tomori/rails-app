@@ -176,6 +176,39 @@ header {
 
  // users#show
 
+  .comment-btn {
+       color: white;
+       background-image: linear-gradient(-90deg, #8800FF, #FF2B00);
+       border-radius: 30px;
+       font-size: 20px;
+       padding: 1px 10px;
+       position: fixed;
+       bottom: 30px;
+       right: 30px;
+       &:hover {
+           text-decoration: none;
+           border: solid 2px #00ccff;
+           color: #00ccff;
+       }
+    
+  }  
+
+  .share-btn {
+       color: white;
+       background-image: linear-gradient(-90deg, #8800FF, #FF2B00);
+       font-size: 20px;
+       border-radius: 30px;
+       padding: 1px 10px;
+       position: fixed;
+       bottom: 30px;
+       left: 30px;
+       &:hover {
+           text-decoration: none;
+           border: solid 2px #00ccff;
+           color: #00ccff;
+       }
+  }
+
   .show-back-wrapper {
 
         position: relative;
@@ -202,7 +235,7 @@ header {
         }
      
         .show-name {
-            font-size: 35px;
+            font-size: 20px;
             display: inline-block;
             margin-left: 20px;
             position: relative;
@@ -213,7 +246,7 @@ header {
           }
 
           .show-type {
-              font-size: 20px;
+              font-size: 15px;
           } 
 
         }
@@ -293,6 +326,40 @@ header {
       position: relative;
       top: -5px;
       left: 5px;
+}
+
+.comment-area {
+      width: 90%;
+      margin-left: 10px;
+      border-radius: 4px;
+}
+
+.comment-submit {
+      margin-bottom: 10px;
+      margin-left: 10px;
+      border-radius: 30px;
+      padding: 1px 5px;
+      color: white;
+      background-image: linear-gradient(-90deg, #8800FF, #FF2B00);
+}
+
+.comment-user-image {
+      display: block;
+      border-radius: 100px;
+      border: solid 1px white;
+}
+
+.comment-user-name {
+      display: block;
+      &:hover {
+         color: black;
+      }
+}
+
+.border {
+      width: 80%;
+      margin: 2px auto;
+      border: solid 1px #808080;
 }
 
  // articles
