@@ -106,11 +106,73 @@ header {
 }
  // static_pages#home
 
-.home {
-      
+.category-search {
+      width: 90%;
+      margin: 20px auto;
+      height: 100px;
+      padding-top: 10px;
 }
 
+.search-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
+   #search-text {
+      margin: auto 0;
+      color: black;     
+   }
+
+   #type {
+        border: none;
+        width: 25%;
+        background-color: white;
+        color: black; 
+   }
+ 
+   #featured {
+        border: none;
+        width: 25%;
+        background-color: white;
+        color: black;
+   }
+ 
+   #search {
+        width: 25%;
+        background-color: white;
+        color: black;
+        boder: solid 2px black;
+        border-radius: 20px;
+        &:hover {
+          background-color: #808080;
+          color: white;
+        } 
+   }
+  
+}
+
+.home-tag-text {
+    display: inline-block;
+    margin-top: 10px;
+    color: black;
+    margin-right: 10px;
+}
+
+.search-tag {
+    display: inline-block;
+    padding: 1px 5px;
+    margin: 3px 2px;
+    border-radius: 20px;
+    border: solid 1px #000080;
+    color: #000080;
+    background-color: white;
+    &:hover {
+       background-color: #000080;
+       border: solid 1px white;
+       color: white;
+       text-decoration: none;
+    }
+}
 
  // users#show
 
@@ -239,6 +301,10 @@ header {
     max-width: 1000px;
     margin: 50px auto;
     width: 75%;   
+
+   #article_type {
+      height: 30px;
+   }
 }
 
    // show
@@ -292,7 +358,6 @@ header {
   }
 
   .article-image {
-      height: 300px;
       width: 100%;
       display: block;
       margin-bottom: 20px;

@@ -21,7 +21,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'twitter'
 # Use sqlite3 as the database for Active Record
-gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap-sass', '~> 3.4.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

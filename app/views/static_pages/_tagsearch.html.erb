@@ -1,0 +1,12 @@
+<div class="modal-dialog" role="document">
+ <div class="modal-content" style="height: 500px;">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px; margin-right: 10px;">
+        <span aria-hidden="true">&times;</span>
+  </button>
+  <p style="margin-left: 5px; margin-top: 10px;">検索したいタグを以下から1つ選んでください</p>
+  <% i = 0 %>
+  <% Tag.all.each do |tag| %>
+   <%= link_to tag.content, root_path(:tag_id => tag.id), :class => "search-tag" %>
+  <% end %>
+ </div>
+</div>

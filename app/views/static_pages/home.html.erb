@@ -1,28 +1,25 @@
-<div class="slide-articles"></div>
-<div class-"search"></div>
+ <div class="category-search">
+  <%= form_tag({:controller => 'static_pages', :action => 'home'}, {:method => :get, :class => 'search-form'}) do %>
 
-<div>
- <p class="home-text">ユーザ</p>
- <div class="home-flex">
-  <% @home_users.each do |user| %>
-   <a class="home-user" href="<%= user_url(user.id) %>" style="background-image: url('<%= user.picture.home.url %>');">
-     <% if user.image %>
-      <%= image_tag(user.image, :size => 70, :class => "card-icon") %>
-     <% else %>
-      <%= image_tag(user.seedicon, :size => 70, :class => "card-icon") %>
-     <% end %>
-    <div class="text">
-     <p class="card-user-name"><%= user.name %></p>
-     <p class="card-user-type"><%= user.type if user.type.present? %></p>
-    </div>
-    <p class="home-follow"><%= "フォロー" + user.following.count.to_s + "  フォロワー" + user.followers.count.to_s%></p>
-   </a>
-  <% end %>
+   <p id="search-text">条件検索:</p>
+
+   <%= select_tag :type, options_for_select([["カテゴリ", "カテゴリ"], ["アプリケーション", "アプリケーション"], ["Webサイト", "Webサイト"], ["デザイン", "デザイン"], ["写真", "写真"], ["絵", "絵"], ["UI/UX", "UI/UX"], ["音楽", "音楽"], ["映像", "映像"], ["ハードウェア", "ハードウェア"], ["文章", "文章"], ["その他", "その他"]]) %>
+
+ 
+    <%= select_tag :featured, options_for_select([["表示順", "表示順"], ["Likeが多い", "Likeが多い"], ["最近", "最近"]]) %>
+
+    <%= submit_tag "検索", :id => "search" %>
+
+   <% end %>
+
+   <p class="home-tag-text">タグ検索:</p>
+   <%= link_to "タグを選択する", 'static_pages/search', remote: true, :class=>"search-tag" %>
+   <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
+
  </div>
-</div>
 
 <div>
- <p class="home-text">作品</p>
+ <p class="home-text" style="font-family: Futura;">Portfolios</p>
  <div class="home-flex">
   <% @home_articles.each do |article| %>
    <div class="home-article">
@@ -40,3 +37,25 @@
   <% end %>
  </div>
 </div>
+
+
+<div>
+ <p class="home-text" style="font-family: Futura;">Creators</p>
+ <div class="home-flex">
+  <% @home_users.each do |user| %>
+   <a class="home-user" href="<%= user_url(user.id) %>" style="background-image: url('<%= user.picture.home.url %>');">
+     <% if user.image %>
+      <%= image_tag(user.image, :size => 70, :class => "card-icon") %>
+     <% else %>
+      <%= image_tag(user.seedicon, :size => 70, :class => "card-icon") %>
+     <% end %>
+    <div class="text">
+     <p class="card-user-name"><%= user.name %></p>
+     <p class="card-user-type"><%= user.type if user.type.present? %></p>
+    </div>
+    <p class="home-follow" style="color: white;"><%= "フォロー" + user.following.count.to_s + "  フォロワー" + user.followers.count.to_s%></p>
+   </a>
+  <% end %>
+ </div>
+</div>
+

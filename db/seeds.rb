@@ -70,7 +70,8 @@ User.create!(
      url: "https://itomarika.com/s/m03/?ima=5210",
      description: "私のオフィシャルサイトです。",
      catchcopy: "はじまりか、",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     type: "文章"
  )
 end
 
@@ -81,7 +82,8 @@ end
      url: "http://blog.nogizaka46.com/asuka.saito/",
      description: "私の公式ブログです。どうか見てやってください！",
      catchcopy: "乃木坂次期エースの独り言",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png")    
+     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     type: "文章"    
 )
 end
 
@@ -92,7 +94,8 @@ end
      url: "https://www.kronekodow.com/news/news_0.html",
      description: "2018年の10月と11月に開催された、椎名林檎のデビュー20周年記念のアリーナツアー「椎名林檎(生)林檎博'18 －不惑の余裕－」。こちらの模様がこのほど、Blu-rayとDVDで映像作品化されることとなりました。",
      catchcopy: "不惑の余裕",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     type: "音楽"
  )
 end
 
@@ -103,7 +106,8 @@ end
      url: "http://yakushimaruetsuko.com/",
      description: "私のオフィシャルサイトです。最新情報などが確認できますので私のファンは是非ご利用ください。",
      catchcopy: "デザインすごいでしょ？",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png")     
+     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     type: "Webサイト" 
  )
 end
 
@@ -114,7 +118,8 @@ end
      url: "https://digitalnature.slis.tsukuba.ac.jp/",
      description: "僕の研究室のサイトです。",
      catchcopy: "脱近代しようぜ！",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     type: "Webサイト"
  )
 end
 

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'static_pages/home' 
+  get 'static_pages/search'
   root 'static_pages#home'
   resources :users do
    member do

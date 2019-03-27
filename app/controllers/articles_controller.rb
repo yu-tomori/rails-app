@@ -60,7 +60,7 @@ class ArticlesController < ApplicationController
    end
  
    def article_params
-    params.require(:article).permit(:user_id, :name, :url, :description, :catchcopy, :image)
+    params.require(:article).permit(:user_id, :name, :url, :description, :catchcopy, :image, :type)
    end
 
    def default_image
