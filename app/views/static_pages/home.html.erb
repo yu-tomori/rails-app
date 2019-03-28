@@ -26,7 +26,7 @@
 
  <% if params[:tag_id].present? && !@home_articles.present? %>
   <div style="margin-left: 20px;">
-   <p><%= Tag.find(params[:tag_id]).content %>は探まわったけど見つからなかった... </p>
+   <p><%= Tag.find(params[:tag_id]).content %>は探しまわったけど見つからなかった... </p>
   </div>
  <% end %>
 

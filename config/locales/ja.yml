@@ -4,3 +4,14 @@ ja:
       description: '作品を投稿して楽しむサービスです。'
       site: 'my portfolio'
       title: 'あなたの作品も投稿してみませんか？'
+      og:
+        title: :title
+        description: :description
+        type: 'website'
+        url: request.original_url
+        image: image_url('logo3.png')
+        site_name: 'my portfolio'
+      twitter:
+        site: '@peacetomori1118'
+        card: 'summary'
+        image: image_url('mono-gradation2.png')
