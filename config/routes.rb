@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/home' 
   get 'static_pages/search'
+  get 'static_pages/menu'
   root 'static_pages#home'
   resources :users do
    member do

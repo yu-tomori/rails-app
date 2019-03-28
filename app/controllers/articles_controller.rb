@@ -66,6 +66,6 @@ class ArticlesController < ApplicationController
 
    def default_image
     article = Article.last
-    article.update_attribute( "image" ,  open("#{Rails.root}/app/assets/images/mono-gradation.png")) if article.image.file.nil?
+    article.update_attribute( "image" ,  open("#{Rails.root}/app/assets/images/mono-gradation4.png")) if article.image.file.nil?
    end
 end

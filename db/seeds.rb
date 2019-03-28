@@ -16,7 +16,7 @@ User.create!(
     password: "28167295",
     description: "女優です。",
     type: "元乃木坂46",
-    picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+    picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png")
 )
 
 User.create!(
@@ -27,7 +27,7 @@ User.create!(
     password: "28167295",
     description: "アイドルやってます。乃木坂の次期エース候補です。",
     type: "乃木坂46一期生",
-    picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+    picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png")
 )
 
 User.create!(
@@ -38,7 +38,7 @@ User.create!(
     password: "28167295",
     description: "演出家です。作詞・作曲もします。昔は、東京事変というバンドをやっていました。",
     type: "演出家",
-    picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+    picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png")
 )
 
 User.create!(
@@ -49,7 +49,7 @@ User.create!(
     password: "28167295",
     description: "アーティストです。相対性理論というバンドをやっています。",
     type: "音楽家",
-    picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+    picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png")
 )
 
 User.create!(
@@ -60,7 +60,7 @@ User.create!(
     password: "28167295",
     description: "大学の先生です。デジタルネイチャーを提唱しています。",
     type: "大学の先生",
-    picture: open("#{Rails.root}/app/assets/images/mono-gradation.png") 
+    picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png") 
 )
 
 10.times do
@@ -70,7 +70,7 @@ User.create!(
      url: "https://itomarika.com/s/m03/?ima=5210",
      description: "私のオフィシャルサイトです。",
      catchcopy: "はじまりか、",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     image: open("#{Rails.root}/app/assets/images/mono-gradation4.png"),
      type: "文章"
  )
 end
@@ -82,7 +82,7 @@ end
      url: "http://blog.nogizaka46.com/asuka.saito/",
      description: "私の公式ブログです。どうか見てやってください！",
      catchcopy: "乃木坂次期エースの独り言",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     image: open("#{Rails.root}/app/assets/images/mono-gradation4.png"),
      type: "文章"    
 )
 end
@@ -94,7 +94,7 @@ end
      url: "https://www.kronekodow.com/news/news_0.html",
      description: "2018年の10月と11月に開催された、椎名林檎のデビュー20周年記念のアリーナツアー「椎名林檎(生)林檎博'18 －不惑の余裕－」。こちらの模様がこのほど、Blu-rayとDVDで映像作品化されることとなりました。",
      catchcopy: "不惑の余裕",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     image: open("#{Rails.root}/app/assets/images/mono-gradation4.png"),
      type: "音楽"
  )
 end
@@ -106,7 +106,7 @@ end
      url: "http://yakushimaruetsuko.com/",
      description: "私のオフィシャルサイトです。最新情報などが確認できますので私のファンは是非ご利用ください。",
      catchcopy: "デザインすごいでしょ？",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     image: open("#{Rails.root}/app/assets/images/mono-gradation4.png"),
      type: "Webサイト" 
  )
 end
@@ -118,7 +118,7 @@ end
      url: "https://digitalnature.slis.tsukuba.ac.jp/",
      description: "僕の研究室のサイトです。",
      catchcopy: "脱近代しようぜ！",
-     image: open("#{Rails.root}/app/assets/images/mono-gradation.png"),
+     image: open("#{Rails.root}/app/assets/images/mono-gradation4.png"),
      type: "Webサイト"
  )
 end
@@ -130,7 +130,7 @@ followers = users[3..5]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-tags = ['Ruby on Rails', 'Java', 'Webアプリ', 'Adobe Illustrator', 'Adobe Photoshop']
+tags = ['Webアプリケーション', 'iPhoneアプリ', 'Androidアプリ', 'Webサイト', 'ロゴデザイン', 'ヘッダーでサイン', '動画', 'デッサン', '鉛筆書き', 'イラスト', 'グラフィックデザイン', 'プロダクトデザイン', 'サウンド', 'UI', 'UX', 'ゲーム', 'コピー', '記事', '漫画', 'ファッション', 'メイクアップ', 'スタイリング', 'ヘアカット', '作詞', '音楽', '演出', '料理', '彫刻', '小説', '随筆', '脚本', '劇', '詩', '曲', '俳句', '旅行記', 'ノンフィクション',  'Ruby', 'Java', 'Python', 'Go', 'Scala', 'HTML&CSS', 'JavaScript', 'C', 'C#', 'Unity', 'C++', 'Elixir', 'Kotlin', 'Objective-C', 'PHP', 'Swift', 'Perl', 'Rust', 'TypeScript', , 'Illustrator', 'Premiere Rush', 'Premiere Pro', 'After Effect', 'Lightroom', 'Dreamweaver', 'XD', 'Bridge', 'Portfolio', 'Spark', 'Behance', 'Color', 'InDesign', 'Dimension', 'Animate', 'Character Animator', 'Audition', 'InCopy', 'Prelude', 'Fuse', 'Camera Raw', 'PowerPoint', 'DTM', 'Studio One', 'Logic Pro', 'Cubase', 'Ableton Live', 'FL Studio', 'Pro Tools', 'Sketch', 'Figma', 'InVision Studio', 'STUDIO', '私のポートフォリオ', 'コメントください', '一応プロです', ]
 tags.each do |tag|
  Tag.create!(
      content: tag

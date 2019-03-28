@@ -1,17 +1,9 @@
 <% if !!session[:user_id] %>
 
  <div class="header-right-content">
-  <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><%= link_to 'プロフィール', @login_user %></li>
-    <li><%= link_to 'マイページ', @login_user %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, { method: :delete } %></li>
-  </ul>
-  </div>
-  <%= link_to "作品を投稿する", new_article_path, :class => "twitter-login-button", :style => "margin-left: 5px;" %>
+  <%= link_to "メニュー", '/static_pages/menu', remote: true, :class => "twitter-login-button", :style => "margin-left: 5px;" %>
+ 
+
   <% if @login_user.image %>
    <%= image_tag(@login_user.image, :class => 'header-icon') %>
   <% else %>

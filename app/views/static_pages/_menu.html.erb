@@ -1,0 +1,13 @@
+<div class="modal-dialog" role="document">
+ <div class="modal-content" style="width: 75%; height: 300px; margin: 0 auto; background-image: linear-gradient(-90deg, #FAE0E5, #FFFFFF);">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px; margin-right: 10px;">
+     <span aria-hidden="true">&times;</span>
+  </button>
+  <p style="font-size: 30px; margin-bottom: 50px; width: 100%; text-align: center; font-family: Futura; color: #808080;">menu</p>
+  <% @login_user = User.find(session[:user_id]) %>
+  <%= link_to 'my page', @login_user, :class => 'header-menu' %>
+  <%= link_to 'post portfolio', new_article_path, :class => 'header-menu' %>
+  <%= link_to 'top page', root_path, :class => 'header-menu' %>
+  <%= link_to 'logout', destroy_user_session_path, class: 'header-menu', method: :delete %>
+ </div>
+</div>

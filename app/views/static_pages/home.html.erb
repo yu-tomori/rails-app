@@ -27,12 +27,21 @@
     <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
     <p class="home-article-name"><%= article.name %></p>
     <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>
+    <div class="article-desc">
+     <%= article.description %>
+    </div>
    </a>
     <% if @login_user.present? %>
-     <div id="<%= article.id %>" style="position:absolute; bottom:5px; left: 5px;">
+     <div id="<%= article.id %>">
       <%= render "likes/like", article: article %>
      </div>
     <% end %>
+     <% i = 0 %>
+     <% article.tags.each do |tag| %>
+      <%= link_to tag.content, root_path(:tag_id => tag.id), :class => "search-tag", :style => "margin-top: 10px; margin-left: 3px;" %>
+      <% i += 1 %>
+      <% break if i == 3 %>
+     <% end %>
    </div>
   <% end %>
  </div>

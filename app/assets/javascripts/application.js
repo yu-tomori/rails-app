@@ -21,3 +21,4 @@ window.onpageshow = function(event) {
        window.location.reload();
   }
 };
+

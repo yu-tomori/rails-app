@@ -8,12 +8,18 @@
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=360,initial-scale=1">
+    <%= display_meta_tags reverse: true %>
+ 
+    <!--[if lt IE 9]>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
  
   </head>
 
   <body>
       
       <%= render 'shared/header' %>
+      <div class="modal fade" id="menu-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;"></div>
       
       <div class="content">
 	 <%= yield %>
@@ -21,13 +27,5 @@
       
       <%= render 'shared/footer' %>
 
-      <% unless flash.empty? %>
-         <script type="text/javascript">
-           <% flash.each do |f| %>
-             <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-             toastr['<%= type %>']('<%= f[1] %>');
-           <% end %>
-         </script>
-      <% end %>
   </body>
 </html>

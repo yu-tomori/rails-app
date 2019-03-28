@@ -12,7 +12,7 @@
 <div>
  <p><%= "カテゴリー: " + @article.type.to_s %></p>
  <% @article.tags.each do |tag| %>
-  <p class="tag-button3" style="display: inline-block;"><%= tag.content %></p>
+  <%= link_to tag.content, root_path(:tag_id => tag.id), :class => "search-tag", :style => "margin-top: 3px; margin-left: 3px;" %>
  <% end %>
 </div>
 <p class="article-name"><%= @article.name %></p>
@@ -40,7 +40,6 @@
 
 <p class="about-article">About</p>
 <%= @article.description %>
-</div>
 
 <div id="flash_messages">
   <% if flash.present? %>
@@ -52,4 +51,6 @@
 
 <div id="comments">
  <%= render "comments" %>
+</div>
+
 </div>
