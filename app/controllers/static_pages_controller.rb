@@ -24,6 +24,14 @@ class StaticPagesController < ApplicationController
    @home_articles.each{ |article| article.image.recreate_versions! }
   end
 
+  def privacy
+  end
+ 
+  def terms
+  end
+
+  def contact
+  end
 
 
 

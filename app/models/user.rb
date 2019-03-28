@@ -29,7 +29,7 @@ class User < ApplicationRecord
         name: auth.info.name, 
         nickname: auth.info.nickname,
         description: auth.info.description,
-        picture: open("#{Rails.root}/app/assets/images/mono-gradation.png")
+        picture: open("#{Rails.root}/app/assets/images/mono-gradation5.png")
       )
     end
 

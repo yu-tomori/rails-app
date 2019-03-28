@@ -1,3 +1,8 @@
 <footer>
- <h1>This is footer</h1>
+ <div class="footer-parent">
+  <%= link_to 'Contact', contact_path, :class => "footer-child" %>
+  <%= link_to 'Privacy Policy', privacy_path, :class => "footer-child" %>
+  <%= link_to 'Terms of Service', terms_path, :class => "footer-child" %>
+ </div>
+  <p class="footer-copyright">Copyright2019 myportfolio All Rights Reserved.</p>
 </footer>

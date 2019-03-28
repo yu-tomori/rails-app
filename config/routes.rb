@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'comments/new'
 
   get 'static_pages/home' 
+  get 'privacy', to: 'static_pages#privacy'
+  get 'terms', to: 'static_pages#terms'
+  get 'contact', to: 'static_pages#contact'
   get 'static_pages/search'
   get 'static_pages/menu'
   root 'static_pages#home'
