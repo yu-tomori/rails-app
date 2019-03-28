@@ -10,6 +10,7 @@ end
 ruby '2.5.1'
 gem 'rails', '~> 5.1.6'
 
+gem 'dotenv-rails'
 gem 'meta-tags'
 gem 'counter_culture', '~> 1.8'
 gem 'toastr-rails'

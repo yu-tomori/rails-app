@@ -1,7 +1,7 @@
 <% if !!session[:user_id] %>
 
  <div class="header-right-content">
-  <%= link_to "メニュー", '/static_pages/menu', remote: true, :class => "twitter-login-button", :style => "margin-left: 5px;" %>
+  <%= link_to "menu", '/static_pages/menu', remote: true, :class => "twitter-login-button", :style => "margin-left: 5px;" %>
  
 
   <% if @login_user.image %>

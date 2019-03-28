@@ -1,3 +1,6 @@
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= @user.name %><%= sanitize '%0a「my portfolio」はポートフォリオを共有しあって盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+<a class="comment-btn" href="https://twitter.com/search?q=%40<%= @user.nickname %>" rel="nofollow" target="_blank">Twitterでフォロー</a>
+
 <div class="show-wrapper">
  <div class="show-back-wrapper">
 
@@ -66,7 +69,7 @@
   <div class="home-flex">
    <% @users_articles.each do |article| %>
     <div class="home-article">
-    <a href="<%= article_url(article.id) %>", style="text-decoration: none;">
+   <a href="<%= article_url(article.id) %>", style="text-decoration: none;">
      <div class="home-article-image" style="background-image: url('<%= article.image.home.url %>')"></div>
     <p class="home-article-name"><%= article.name %></p>
     <p class="home-article-creator"><%= 'creator : ' + article.user.name %></p>

@@ -6,8 +6,8 @@
 
 
 <% end %>
-<% text = ERB::Util.html_escape('my portfolio | 作品を共有し合って盛り上がるサービスですhttps://qiita.com/hide/items/5bfe5b322872c61a6896'); %>
-<a href="#" class="share-btn">Twitterでシェア</a>
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= @article.name %><%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+
 
 <div>
  <p><%= "カテゴリー: " + @article.type.to_s %></p>
@@ -23,6 +23,16 @@
    <%= render "likes/like", article: @article %>
   </div>
  <% end %>
+
+<% if @article.like_users.present? %>
+<p style="font-size: 15px; font-family: Futura; margin-top: 10px; color: #808080;">liked by:</p>
+<div class="user-show-follow-info" style="margin-left: 0;">
+<% @article.like_users.each do |like_user| %>
+  <% icon = like_user.seedicon.present? ? like_user.seedicon : like_user.image %>
+  <%= link_to image_tag(icon, :size =>60, :class=>"follow-icon"), user_path(like_user) %>
+<% end %>
+</div>
+<% end %>
 
 <div style="display: inline-block; margin-bottom: 10px; margin-top: 50px;">
 <% if @login_user.present? && @login_user.id == @article.user.id %>
@@ -41,13 +51,6 @@
 <p class="about-article">About</p>
 <%= @article.description %>
 
-<div id="flash_messages">
-  <% if flash.present? %>
-   <% flash.each do |type, message| %>
-    <p><%= type %>: <%= message %></p>
-   <% end %>
-  <% end %>
-</div>
 
 <div id="comments">
  <%= render "comments" %>

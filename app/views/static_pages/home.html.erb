@@ -1,3 +1,6 @@
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+ 
+
  <div class="category-search">
   <%= form_tag({:controller => 'static_pages', :action => 'home'}, {:method => :get, :class => 'search-form'}) do %>
 
@@ -13,13 +16,26 @@
    <% end %>
 
    <p class="home-tag-text">タグ検索:</p>
-   <%= link_to "タグを選択する", 'static_pages/search', remote: true, :class=>"search-tag" %>
+   <%= link_to "タグを選択する", static_pages_search_path, remote: true, :class=>"search-tag" %>
    <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
 
  </div>
 
 <div>
- <p class="home-text" style="font-family: Futura;">Portfolios</p>
+ <p class="home-text" style="text-align: center;font-family: Futura;">Portfolios</p>
+
+ <% if params[:tag_id].present? && !@home_articles.present? %>
+  <div style="margin-left: 20px;">
+   <p><%= Tag.find(params[:tag_id]).content %>は探まわったけど見つからなかった... </p>
+  </div>
+ <% end %>
+
+ <% if params[:type].present? && !@home_articles.present? %>
+  <div style="margin-left: 20px;">
+   <p><%= params[:type] %>は探しまわったけど見つからなかった...</p>
+  </div>
+ <% end %>
+
  <div class="home-flex">
   <% @home_articles.each do |article| %>
    <div class="home-article">
@@ -32,7 +48,7 @@
     </div>
    </a>
     <% if @login_user.present? %>
-     <div id="<%= article.id %>">
+     <div id="<%= article.id %>" style="margin-bottom: 10px;">
       <%= render "likes/like", article: article %>
      </div>
     <% end %>
@@ -49,7 +65,7 @@
 
 
 <div>
- <p class="home-text" style="font-family: Futura;">Creators</p>
+ <p class="home-text" style=" text-align: center;font-family: Futura;">Creators</p>
  <div class="home-flex">
   <% @home_users.each do |user| %>
    <a class="home-user" href="<%= user_url(user.id) %>" style="background-image: url('<%= user.picture.home.url %>');">

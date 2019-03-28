@@ -17,6 +17,16 @@
  @import "bootstrap"; 
  @import "toastr";
 
+.color-gold {
+    color: gold;
+    font-size: 20px;
+}
+
+.font-si {
+    font-size: 20px;
+    color: white;
+}
+
  body {
      position: relative;
      font-size: 1.2rem;
@@ -205,8 +215,10 @@ header {
        font-size: 20px;
        padding: 1px 10px;
        position: fixed;
-       bottom: 30px;
-       right: 30px;
+       bottom: 50px;
+       right: 100px;
+       z-index: 105;
+       text-decoration: none;
        &:hover {
            text-decoration: none;
            border: solid 2px #00ccff;
@@ -222,8 +234,10 @@ header {
        border-radius: 30px;
        padding: 1px 10px;
        position: fixed;
-       bottom: 30px;
-       left: 30px;
+       bottom: 50px;
+       left: 20px;
+       text-decoration: none;
+       z-index: 105;
        &:hover {
            text-decoration: none;
            border: solid 2px #00ccff;
@@ -326,7 +340,8 @@ header {
 
 .follow-text {
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 10px;
+    margin-top: 20px;
     color: #808080;
 }
 
@@ -343,6 +358,14 @@ header {
       margin-bottom: 10px;
   }
 
+}
+
+
+.follow-icon {
+    border-radius: 48px;
+    border: solid 1px #808080;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 .like {

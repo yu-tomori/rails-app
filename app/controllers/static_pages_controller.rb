@@ -14,11 +14,11 @@ class StaticPagesController < ApplicationController
 
 
    if params[:type].present?
-     @home_articles = Article.where(type: params[:type]).limit(8).order("id DESC")
+     @home_articles = Article.where(type: params[:type]).limit(20).order("id DESC")
    elsif params[:tag_id].present?
-    @home_articles = Tag.find(params[:tag_id]).articles.limit(8)
+    @home_articles = Tag.find(params[:tag_id]).articles.limit(20)
    else
-    @home_articles = Article.order("id DESC").limit(8)
+    @home_articles = Article.order("id DESC").limit(20)
    end
 
    @home_articles.each{ |article| article.image.recreate_versions! }
