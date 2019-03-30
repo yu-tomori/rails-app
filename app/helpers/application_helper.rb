@@ -10,8 +10,8 @@ module ApplicationHelper
       canonical: request.original_url,
       separator: '|',
       icon: [
-        { href: image_url('web-icon1.svg') },
-        { href: image_url('web-icon1.svg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/svg' }
+        { href: asset_url('web-icon1.svg') },
+        { href: asset_url('web-icon1.svg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/svg' }
       ],
       og: {
         site_name: :site, # もしくは site_name: :site
@@ -23,9 +23,11 @@ module ApplicationHelper
         locale: 'ja_JP'
       },
       twitter: {
-        card: 'summary',
+        card: 'summary_large_image',
         site: '@peacetomori1118',
-        image: image_url('mono-gradation2.png')
+        image: asset_url('mono-gradation2.png'),
+        title: :title,
+        description: :desctiption
       }
     }
   end
