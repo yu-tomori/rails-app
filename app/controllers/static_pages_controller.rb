@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
    end
 
    @home_users = User.all # 後で修正
-   # @home_users.each{ |user| user.picture.recreate_versions! }
+   @home_users.each{ |user| user.picture.recreate_versions! }
 
 
    if params[:type].present? && params[:featured].present?
@@ -33,7 +33,7 @@ class StaticPagesController < ApplicationController
     @home_articles = Article.order("id DESC").limit(40)
    end
 
-  # @home_articles.each{ |article| article.image.recreate_versions! }
+   @home_articles.each{ |article| article.image.recreate_versions! }
   end
 
   def privacy
@@ -70,7 +70,7 @@ class StaticPagesController < ApplicationController
   def get_article_by_sql
    sql = ActiveRecord::Base.send(
     :sanitize_sql_array,[
-    'SELECT articles.id FROM articles INNER JOIN (select count(*) from likes, articles where likes.article_id = articles.id) as likes_count;'
+    'SELECT *,count(*) as cnt FROM articles INNER JOIN likes ON articles.id = likes.article_id GROUP BY articles.id'
     ]
    )
    # @home_articles = ActiveRecord::Base.connection.select_one(sql)
