@@ -70,7 +70,7 @@ class StaticPagesController < ApplicationController
   def get_article_by_sql
    sql = ActiveRecord::Base.send(
     :sanitize_sql_array,[
-    'SELECT articles.id FROM articles INNER JOIN (select count(*) from likes, articles where likes.article_id = articles.id) as likes_count'
+    'SELECT articles.id FROM articles INNER JOIN (select count(*) from likes, articles where likes.article_id = articles.id) as likes_count;'
     ]
    )
    # @home_articles = ActiveRecord::Base.connection.select_one(sql)
