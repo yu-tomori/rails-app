@@ -19,13 +19,13 @@ module ApplicationHelper
         description: :description, # もしくは description: :description
         type: 'website',
         url: request.original_url,
-        image: image_url('mono-gradation2.png'),
+        image: image_url('mono-gradation6.png'),
         locale: 'ja_JP'
       },
       twitter: {
         card: 'summary_large_image',
         site: '@peacetomori1118',
-        image: asset_url('mono-gradation2.png'),
+        image: asset_url('mono-gradation6.png'),
         title: :title,
         description: :desctiption
       }
