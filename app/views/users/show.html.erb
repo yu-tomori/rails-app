@@ -1,4 +1,4 @@
-<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= @user.name %><%= sanitize '%0a「my portfolio」はポートフォリオを共有しあって盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= '%0a' + @user.name + 'のページ' %><%= sanitize '%0a「my portfolio」はポートフォリオを共有しあって楽しむサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
 <a class="comment-btn" href="https://twitter.com/search?q=%40<%= @user.nickname %>" rel="nofollow" target="_blank">Twitterでフォロー</a>
 
 <div class="show-wrapper">

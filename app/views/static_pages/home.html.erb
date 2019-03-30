@@ -1,4 +1,4 @@
-<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って楽しむサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
  
 
  <div class="category-search">
@@ -54,7 +54,7 @@
     <% end %>
      <% i = 0 %>
      <% article.tags.each do |tag| %>
-      <%= link_to tag.content, root_path(:tag_id => tag.id), :class => "search-tag", :style => "margin-top: 10px; margin-left: 3px;" %>
+      <%= link_to tag.content, root_path(:tag_id => tag.id), :class => "search-tag", :style => "margin-top: 3px; margin-left: 3px;" %>
       <% i += 1 %>
       <% break if i == 3 %>
      <% end %>

@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20190327045704) do
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0, null: false
     t.string "type"
-    t.index ["type"], name: "index_articles_on_type"
   end
 
   create_table "comments", force: :cascade do |t|

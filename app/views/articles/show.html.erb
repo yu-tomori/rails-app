@@ -6,7 +6,7 @@
 
 
 <% end %>
-<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= @article.name %><%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って盛り上がるサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
+<a class='share-btn' href="https://twitter.com/share?url=<%= request.url %>&text=<%= @article.user.name + 'の作品「' + @article.name + '」' %><%= sanitize '%0a「my portfolio」はポートフォリオを共有し合って楽しむサービスです' %>" rel="nofollow" target="_blank">Tweet</a>
 
 
 <div>
