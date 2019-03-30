@@ -25,6 +25,7 @@ module ApplicationHelper
       twitter: {
         card: 'summary_large_image',
         site: '@peacetomori1118',
+        url: request.original_url,
         image: asset_url('mono-gradation6.png'),
         title: :title,
         description: :desctiption
