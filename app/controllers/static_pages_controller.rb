@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
    end
 
    @home_users = User.all # 後で修正
-   @home_users.each{ |user| user.picture.recreate_versions! }
+   # @home_users.each{ |user| user.picture.recreate_versions! }
 
 
    if params[:type].present? && params[:featured].present?
