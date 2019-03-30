@@ -33,7 +33,7 @@ class StaticPagesController < ApplicationController
     @home_articles = Article.order("id DESC").limit(40)
    end
 
-   @home_articles.each{ |article| article.image.recreate_versions! }
+  # @home_articles.each{ |article| article.image.recreate_versions! }
   end
 
   def privacy
