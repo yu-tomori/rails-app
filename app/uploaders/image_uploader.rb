@@ -4,9 +4,14 @@ class ImageUploader < CarrierWave::Uploader::Base
    include CarrierWave::MiniMagick
    process resize_to_limit: [1104, 100000]
 
+  if Rails.env.development?
+    storage :file
+  elseif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
