@@ -1,4 +1,5 @@
-CarrierWave.configure do |config|
+if Rails.env.production?
+ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider: 'AWS',
@@ -8,6 +9,7 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = 'rails-myportfolio'
   config.cache_storage = :fog
+ end
 end
 
 

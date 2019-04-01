@@ -38,7 +38,7 @@
 <% if @login_user.present? && @login_user.id == @article.user.id %>
  <%= link_to "作品を編集する", edit_article_path(@article), :class => "edit-article-btn" %>
  <%= link_to "作品を削除する", article_path(@article), method: :delete, :class => "edit-article-btn" %>
- <%= link_to "タグの編集", tag_article_path(@article.id), :class => "edit-article-btn" %>
+ <%= link_to "タグの編集", tag_article_path(@article.id), :class => "edit-article-btn", :style=>"display: block; padding: 0.1em 1em;" %>
 <% end %>
 </div>
 
